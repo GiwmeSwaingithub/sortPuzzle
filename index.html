@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- ─── Favicon ─── -->
+    <link rel="icon" href="https://i.postimg.cc/DyTNY8vs/Chat-GPT-Image-Aug-3-2026-05-56-10-PM.png" type="image/png" sizes="any" />
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/DyTNY8vs/Chat-GPT-Image-Aug-3-2026-05-56-10-PM.png" />
+
+    <!-- ─── Open Graph / Social Preview ─── -->
+    <meta property="og:title" content="SortPuzzle Privacy Policy – No Data Collection" />
+    <meta property="og:description" content="SortPuzzle collects zero personal data. AdMob ads are used with full COPPA compliance. Read our full privacy policy." />
+    <meta property="og:image" content="https://i.postimg.cc/DyTNY8vs/Chat-GPT-Image-Aug-3-2026-05-56-10-PM.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:url" content="https://sortpuzzle.app/privacy" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SortPuzzle Privacy Policy" />
+    <meta name="twitter:description" content="No personal data collected. COPPA-compliant AdMob ads. Privacy first." />
+    <meta name="twitter:image" content="https://i.postimg.cc/DyTNY8vs/Chat-GPT-Image-Aug-3-2026-05-56-10-PM.png" />
+
+    <title>Privacy Policy — SortPuzzle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700;900&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        /* ── reset & base ── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bark-950: #241510;
+            --bark-900: #2e1b12;
+            --bark-800: #3b2417;
+            --wood-700: #5a3a24;
+            --wood-600: #7a4f2e;
+            --wood-500: #9a6a3d;
+            --grain-line: rgba(255, 214, 160, 0.06);
+            --amber-400: #e8a94f;
+            --amber-300: #f4c877;
+            --amber-200: #ffe0a8;
+            --cream-100: #fbf3e6;
+            --cream-050: #fdf8ef;
+            --ink-700: #3d2e22;
+            --ink-500: #6b5540;
+            --leaf-green: #5f8a52;
+            --shadow-deep: 0 25px 60px rgba(20, 10, 5, 0.45);
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --ease-out: cubic-bezier(.16, 1, .3, 1);
+        }
+
+        body {
+            font-family: 'Nunito Sans', 'Segoe UI', sans-serif;
+            color: var(--ink-700);
+            min-height: 100vh;
+            line-height: 1.65;
+            background:
+                radial-gradient(ellipse at top left, rgba(154, 106, 61, 0.25), transparent 55%),
+                radial-gradient(ellipse at bottom right, rgba(90, 58, 36, 0.35), transparent 55%),
+                repeating-linear-gradient(100deg, var(--bark-900) 0px, var(--bark-900) 2px, var(--bark-950) 2px, var(--bark-950) 4px),
+                var(--bark-950);
+            padding: clamp(14px, 4vw, 40px);
+            overflow-x: hidden;
+        }
+
+        .grain-fx {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: .5;
+            background-image:
+                repeating-linear-gradient(95deg, transparent 0 18px, var(--grain-line) 18px 19px),
+                repeating-linear-gradient(93deg, transparent 0 40px, var(--grain-line) 40px 41px);
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── App Badge ── */
+        .app-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 22px;
+            opacity: 0;
+            animation: dropIn .7s var(--ease-out) forwards;
+        }
+        .app-badge .icon-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: linear-gradient(155deg, var(--amber-300), var(--wood-600));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .35), inset 0 1px 1px rgba(255, 255, 255, .4);
+            font-size: 1.5rem;
+            color: var(--bark-950);
+            overflow: hidden;
+            animation: gentleSway 4.5s ease-in-out infinite;
+        }
+        .app-badge .icon-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+        .app-badge .app-name {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: clamp(1.4rem, 4vw, 1.9rem);
+            color: var(--cream-100);
+            letter-spacing: 0.5px;
+        }
+        .app-badge .app-name span {
+            color: var(--amber-300);
+        }
+
+        /* ── Card ── */
+        .policy-card {
+            background: linear-gradient(180deg, var(--cream-050), var(--cream-100));
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-deep);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .5);
+            opacity: 0;
+            transform: translateY(28px);
+            animation: cardRise .8s var(--ease-out) .15s forwards;
+        }
+
+        .header {
+            position: relative;
+            background: linear-gradient(160deg, var(--wood-500) 0%, var(--wood-700) 55%, var(--bark-800) 100%);
+            color: var(--cream-100);
+            padding: clamp(28px, 5vw, 46px) clamp(20px, 5vw, 40px);
+            text-align: center;
+            overflow: hidden;
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(100deg, rgba(0, 0, 0, 0.08) 0 6px, transparent 6px 26px);
+            mix-blend-mode: overlay;
+            opacity: .6;
+        }
+        .header .ring-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 14px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 30%, var(--amber-200), var(--amber-400) 60%, var(--wood-700));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--bark-950);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .35);
+            position: relative;
+            z-index: 1;
+            animation: floaty 3.8s ease-in-out infinite;
+            overflow: hidden;
+        }
+        .header .ring-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .header h1 {
+            position: relative;
+            z-index: 1;
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
+            margin-bottom: 8px;
+        }
+        .header p.subtitle {
+            position: relative;
+            z-index: 1;
+            opacity: .85;
+            font-size: clamp(.9rem, 2.2vw, 1.05rem);
+        }
+
+        .policy-content {
+            padding: clamp(22px, 5vw, 46px);
+            max-height: none;
+        }
+
+        /* ── Highlight boxes ── */
+        .highlight-box {
+            background: linear-gradient(135deg, #eef6ea, #e3f0dd);
+            border: 1px solid rgba(95, 138, 82, 0.25);
+            border-left: 5px solid var(--leaf-green);
+            padding: clamp(16px, 3vw, 22px);
+            border-radius: var(--radius-md);
+            margin-bottom: clamp(24px, 5vw, 36px);
+            opacity: 0;
+            transform: translateY(14px);
+            animation: fadeUp .6s var(--ease-out) .4s forwards;
+        }
+        .highlight-box .no-data-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--leaf-green);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: .85rem;
+            margin-bottom: 12px;
+            letter-spacing: .3px;
+        }
+        .highlight-box p {
+            color: var(--ink-700);
+            font-size: .98rem;
+        }
+        .highlight-box strong {
+            color: #3a5a30;
+        }
+
+        .highlight-box.ads-box {
+            background: linear-gradient(135deg, #fdf3e6, #f9e8d5);
+            border-left-color: #c9822f;
+            border-color: rgba(201, 130, 47, 0.25);
+        }
+        .highlight-box.ads-box .no-data-badge {
+            background: #c9822f;
+        }
+        .highlight-box.ads-box strong {
+            color: #8f5a1e;
+        }
+
+        /* ── Sections ── */
+        .section {
+            margin-bottom: clamp(22px, 4vw, 32px);
+            padding-bottom: clamp(18px, 4vw, 26px);
+            border-bottom: 1px dashed rgba(122, 79, 46, 0.25);
+            opacity: 0;
+            transform: translateY(18px);
+            animation: fadeUp .6s var(--ease-out) forwards;
+        }
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .section:nth-of-type(1) {
+            animation-delay: .45s;
+        }
+        .section:nth-of-type(2) {
+            animation-delay: .55s;
+        }
+        .section:nth-of-type(3) {
+            animation-delay: .65s;
+        }
+        .section:nth-of-type(4) {
+            animation-delay: .75s;
+        }
+        .section:nth-of-type(5) {
+            animation-delay: .85s;
+        }
+        .section:nth-of-type(6) {
+            animation-delay: .95s;
+        }
+
+        .section-title {
+            color: var(--wood-700);
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: clamp(1.15rem, 3vw, 1.4rem);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .section-title .icon-chip {
+            flex: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            background: linear-gradient(150deg, var(--amber-300), var(--wood-600));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bark-950);
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(90, 58, 36, .3);
+            transition: transform .35s var(--ease-out);
+        }
+        .section-title:hover .icon-chip {
+            transform: rotate(-8deg) scale(1.06);
+        }
+        .section-title .chevron {
+            margin-left: auto;
+            transition: transform .35s var(--ease-out);
+            color: var(--wood-500);
+        }
+        .section-title.collapsed .chevron {
+            transform: rotate(-90deg);
+        }
+
+        .section-content {
+            color: var(--ink-500);
+            margin-left: 50px;
+            font-size: .98rem;
+            overflow: hidden;
+            max-height: 1000px;
+            transition: max-height .45s var(--ease-out), opacity .35s ease;
+            opacity: 1;
+        }
+        .section-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+        .section-content p {
+            margin-bottom: 12px;
+        }
+        .section-content ul {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+        .section-content li {
+            margin-bottom: 8px;
+        }
+        .section-content li strong {
+            color: var(--wood-700);
+        }
+        .section-content .badge-gdpr {
+            display: inline-block;
+            background: #2d5b8c;
+            color: #fff;
+            font-size: .7rem;
+            font-weight: 800;
+            padding: 2px 12px;
+            border-radius: 50px;
+            letter-spacing: .3px;
+            margin-right: 6px;
+        }
+        .section-content .badge-coppa {
+            display: inline-block;
+            background: #4a7a9c;
+            color: #fff;
+            font-size: .7rem;
+            font-weight: 800;
+            padding: 2px 12px;
+            border-radius: 50px;
+            letter-spacing: .3px;
+            margin-right: 6px;
+        }
+        .section-content .badge-ccpa {
+            display: inline-block;
+            background: #6b4f7a;
+            color: #fff;
+            font-size: .7rem;
+            font-weight: 800;
+            padding: 2px 12px;
+            border-radius: 50px;
+            letter-spacing: .3px;
+            margin-right: 6px;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: linear-gradient(180deg, var(--cream-100), #f3e6d2);
+            padding: clamp(20px, 4vw, 28px) clamp(20px, 5vw, 40px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            border-top: 1px solid rgba(122, 79, 46, 0.2);
+            flex-wrap: wrap;
+        }
+        .footer p {
+            color: var(--ink-500);
+            font-size: .9rem;
+            max-width: 420px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 13px 26px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 800;
+            font-size: .95rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out), background .3s;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        .btn-accept {
+            background: linear-gradient(135deg, var(--amber-300), var(--wood-600));
+            color: var(--bark-950);
+            box-shadow: 0 8px 20px rgba(122, 79, 46, .35);
+        }
+        .btn-decline {
+            background: #f1e7d8;
+            color: var(--wood-700);
+            border: 1px solid rgba(122, 79, 46, .25);
+        }
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 26px rgba(0, 0, 0, .25);
+        }
+        .btn:active {
+            transform: translateY(0) scale(.98);
+        }
+
+        /* ── Toast ── */
+        .message-toast {
+            position: fixed;
+            bottom: 26px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 14px 24px;
+            border-radius: 50px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .35);
+            z-index: 1000;
+            font-weight: 700;
+            font-size: .92rem;
+            animation: toastIn .4s var(--ease-out);
+        }
+        .message-toast.success {
+            background: linear-gradient(135deg, #5f8a52, #456638);
+        }
+        .message-toast.warning {
+            background: linear-gradient(135deg, #c9822f, #8f5a1e);
+        }
+        .message-toast .close-message {
+            cursor: pointer;
+            opacity: .8;
+        }
+        .message-toast .close-message:hover {
+            opacity: 1;
+        }
+
+        /* ── Keyframes ── */
+        @keyframes dropIn {
+            from {
+                opacity: 0;
+                transform: translateY(-14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes cardRise {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes floaty {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-6px) rotate(3deg);
+            }
+        }
+        @keyframes gentleSway {
+            0%,
+            100% {
+                transform: rotate(-4deg);
+            }
+            50% {
+                transform: rotate(4deg);
+            }
+        }
+        @keyframes toastIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, 16px);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .buttons {
+                width: 100%;
+            }
+            .btn {
+                flex: 1;
+                justify-content: center;
+            }
+            .section-content {
+                margin-left: 0;
+                margin-top: 6px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: .001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .001ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grain-fx"></div>
+
+    <div class="container">
+
+        <!-- App Badge -->
+        <div class="app-badge">
+            <div class="icon-wrap">
+                <img src="https://i.postimg.cc/DyTNY8vs/Chat-GPT-Image-Aug-3-2026-05-56-10-PM.png" alt="SortPuzzle logo" />
+            </div>
+            <div class="app-name">Sort<span>Puzzle</span></div>
+        </div>
+
+        <!-- Policy Card -->
+        <div class="policy-card">
+            <div class="header">
+                <div class="ring-icon">
+                    <img src="https://i.postimg.cc/DyTNY8vs/Chat-GPT-Image-Aug-3-2026-05-56-10-PM.png" alt="SortPuzzle" />
+                </div>
+                <h1>Privacy Policy</h1>
+                <p class="subtitle">SortPuzzle · Last updated: August 4, 2026</p>
+            </div>
+
+            <div class="policy-content">
+
+                <!-- Highlight: App collects NO personal data -->
+                <div class="highlight-box">
+                    <div class="no-data-badge"><i class="fas fa-check-circle"></i> NO PERSONAL DATA COLLECTED</div>
+                    <p><strong>SortPuzzle itself does not collect, store, or share any personal information</strong> from our users. We built this app to work quietly and privately, the way a good puzzle should.</p>
+                </div>
+
+                <!-- Highlight: AdMob disclosure (COPPA compliant) -->
+                <div class="highlight-box ads-box">
+                    <div class="no-data-badge"><i class="fas fa-ad"></i> ADMOB · COPPA COMPLIANT</div>
+                    <p><strong>This app uses Google AdMob</strong> to serve advertisements. AdMob may collect <strong>device identifiers, IP address, and non-personal usage data</strong> to show relevant ads. <strong>We have configured AdMob to be COPPA-compliant</strong>, meaning no behavioral targeting is used for users under 13. No personal information is shared with advertisers.</p>
+                </div>
+
+                <!-- Section: Introduction -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon-chip"><i class="fas fa-info-circle"></i></span>
+                        Introduction
+                        <i class="fas fa-chevron-down chevron"></i>
+                    </h2>
+                    <div class="section-content">
+                        <p>This Privacy Policy explains how SortPuzzle ("the App", "we", "our") handles your information when you use our mobile application. We are committed to protecting your privacy and being transparent about our data practices.</p>
+                        <p>By using the App, you agree to the terms outlined in this Privacy Policy.</p>
+                        <p><strong>App Package:</strong> <code>com.mindtech.sortPuzzle</code></p>
+                        <p><strong>Developer:</strong> MindTech</p>
+                        <p><strong>Game Concept:</strong> Sort same color balls in jars.</p>
+                    </div>
+                </div>
+
+                <!-- Section: What We Collect -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon-chip"><i class="fas fa-database"></i></span>
+                        Information We Collect
+                        <i class="fas fa-chevron-down chevron"></i>
+                    </h2>
+                    <div class="section-content">
+                        <p><strong>The SortPuzzle app itself collects NO personal data.</strong> However, we use Google AdMob to display advertisements, which may collect:</p>
+                        <ul>
+                            <li><strong>Device identifiers</strong> (e.g., Advertising ID, Android ID) — used for ad delivery and frequency capping.</li>
+                            <li><strong>IP address</strong> — used for general location approximation and ad fraud prevention.</li>
+                            <li><strong>Non-personal usage data</strong> — such as ad impressions and clicks, to measure ad performance.</li>
+                            <li><strong>Device information</strong> — model, OS version, screen size, language, etc., for ad rendering and optimization.</li>
+                        </ul>
+                        <p><span class="badge-coppa">COPPA</span> We have configured AdMob to use <strong>non-personalized ads</strong> for users under 13, in full compliance with COPPA. No behavioral profiling is performed on children.</p>
+                    </div>
+                </div>
+
+                <!-- Section: What We Do NOT Collect -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon-chip"><i class="fas fa-user-slash"></i></span>
+                        What We Do NOT Collect
+                        <i class="fas fa-chevron-down chevron"></i>
+                    </h2>
+                    <div class="section-content">
+                        <p>SortPuzzle strictly avoids collecting the following:</p>
+                        <ul>
+                            <li><strong>No Personal Identifiers:</strong> We do not collect names, email addresses, phone numbers, or any other PII.</li>
+                            <li><strong>No Location Data:</strong> We do not collect precise or coarse location information.</li>
+                            <li><strong>No Payment Info:</strong> The App does not process payments and does not collect financial data.</li>
+                            <li><strong>No Contacts or Files:</strong> We do not access your contacts, photos, or files unless explicitly required by a core feature (none do).</li>
+                            <li><strong>No Biometric or Sensitive Data:</strong> We do not collect fingerprints, facial data, or any sensitive personal information.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section: How AdMob Works -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon-chip"><i class="fas fa-ad"></i></span>
+                        AdMob &amp; Advertising
+                        <i class="fas fa-chevron-down chevron"></i>
+                    </h2>
+                    <div class="section-content">
+                        <p>SortPuzzle uses <strong>Google AdMob</strong> to serve advertisements. AdMob is a third-party service that operates under its own privacy policy. We have taken steps to ensure it is used responsibly:</p>
+                        <ul>
+                            <li><strong>COPPA-compliant:</strong> For users under 13, we request <strong>non-personalized ads</strong> and do not enable interest-based advertising.</li>
+                            <li><strong>GDPR-ready:</strong> We respect user consent preferences in the EEA and UK. No ads are served without appropriate consent.</li>
+                            <li><strong>Data minimization:</strong> We only use the minimum data required to show ads and measure their effectiveness.</li>
+                            <li><strong>No data sharing:</strong> We do not share any user data with third parties beyond what AdMob requires for ad serving.</li>
+                        </ul>
+                        <p>For more details, please review Google's <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--wood-700);font-weight:600;">Privacy Policy</a> and <a href="https://support.google.com/admob/answer/6128543" target="_blank" style="color:var(--wood-700);font-weight:600;">AdMob's data collection practices</a>.</p>
+                    </div>
+                </div>
+
+                <!-- Section: Compliance -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon-chip"><i class="fas fa-shield-alt"></i></span>
+                        Compliance &amp; Legal
+                        <i class="fas fa-chevron-down chevron"></i>
+                    </h2>
+                    <div class="section-content">
+                        <p>Our Privacy Policy is designed to align with major privacy frameworks:</p>
+                        <ul>
+                            <li><span class="badge-gdpr">GDPR</span> We respect user rights under the General Data Protection Regulation, including transparency, access, and deletion requests.</li>
+                            <li><span class="badge-ccpa">CCPA</span> California residents have the right to know what data is collected and to opt out of data sales. Since we do not sell data, we are fully compliant.</li>
+                            <li><span class="badge-coppa">COPPA</span> The App is safe for children under 13. We do not knowingly collect any personal information from children.</li>
+                            <li><strong>Google Play Policies:</strong> We comply with Google's User Data policy by providing clear, accurate disclosures.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section: Your Rights -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon-chip"><i class="fas fa-user-check"></i></span>
+                        Your Privacy Rights
+                        <i class="fas fa-chevron-down chevron"></i>
+                    </h2>
+                    <div class="section-content">
+                        <p>Even though we collect minimal data through AdMob, you have rights:</p>
+                        <ul>
+                            <li><strong>Right to Access:</strong> Request a copy of any data we hold about you (we hold none beyond what AdMob processes).</li>
+                            <li><strong>Right to Deletion:</strong> Request deletion of any data we have (there is none to delete).</li>
+                            <li><strong>Right to Opt-Out:</strong> You can disable ad personalization in your device settings (Android → Google → Ads).</li>
+                            <li><strong>Right to Withdraw Consent:</strong> In the EEA, you can withdraw consent for ad tracking at any time.</li>
+                            <li><strong>Right to File a Complaint:</strong> You can contact your local data protection authority if you have concerns.</li>
+                        </ul>
+                        <p>To exercise any of these rights, please contact us at <strong>jonnyniles3@gmail.com</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Section: Contact -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <span class="icon-chip"><i class="fas fa-envelope"></i></span>
+                        Contact Us
+                        <i class="fas fa-chevron-down chevron"></i>
+                    </h2>
+                    <div class="section-content">
+                        <p>If you have any questions about this Privacy Policy, our data practices, or if you wish to exercise your privacy rights, please reach out:</p>
+                        <p>
+                            <strong>Email:</strong> <a href="mailto:jonnyniles3@gmail.com" style="color:var(--wood-700);font-weight:600;">jonnyniles3@gmail.com</a><br />
+                            <strong>Package:</strong> <code>com.mindtech.sortPuzzle</code><br />
+                            <strong>Developer:</strong> MindTech
+                        </p>
+                        <p>We may update this Privacy Policy from time to time. Any material changes will be reflected in the "Last updated" date at the top of this policy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>By using SortPuzzle, you acknowledge that you have read and understood this Privacy Policy.</p>
+                <div class="buttons">
+                    <button class="btn btn-decline" id="declineBtn"><i class="fas fa-times"></i> Decline</button>
+                    <button class="btn btn-accept" id="acceptBtn"><i class="fas fa-check"></i> Accept Policy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ─── Collapsible sections ───
+        document.querySelectorAll('.section-title').forEach(title => {
+            title.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                this.classList.toggle('collapsed');
+                content.classList.toggle('collapsed');
+            });
+        });
+
+        // ─── Toast helper ───
+        function showMessage(message, type) {
+            const existing = document.querySelector('.message-toast');
+            if (existing) existing.remove();
+
+            const el = document.createElement('div');
+            el.className = `message-toast ${type}`;
+            el.innerHTML = `<span>${message}</span><i class="fas fa-times close-message"></i>`;
+            document.body.appendChild(el);
+
+            el.querySelector('.close-message').addEventListener('click', () => el.remove());
+
+            setTimeout(() => {
+                if (el.parentNode) {
+                    el.style.transition = 'opacity .4s ease, transform .4s ease';
+                    el.style.opacity = '0';
+                    el.style.transform = 'translate(-50%, 16px)';
+                    setTimeout(() => el.remove(), 400);
+                }
+            }, 4500);
+        }
+
+        // ─── Accept ───
+        document.getElementById('acceptBtn').addEventListener('click', function() {
+            showMessage('Thank you for accepting the SortPuzzle Privacy Policy!', 'success');
+            try {
+                localStorage.setItem('sortpuzzle_privacyPolicyAccepted', 'true');
+            } catch (e) {}
+            setTimeout(() => {
+                // Simulate navigation to app home
+                window.location.href = 'app-home.html';
+            }, 1500);
+        });
+
+        // ─── Decline ───
+        document.getElementById('declineBtn').addEventListener('click', function() {
+            showMessage('You must accept the Privacy Policy to use SortPuzzle.', 'warning');
+            const card = document.querySelector('.policy-card');
+            card.style.transition = 'transform .5s ease, opacity .5s ease';
+            setTimeout(() => {
+                card.style.transform = 'translateX(60px)';
+                card.style.opacity = '0.7';
+            }, 400);
+        });
+
+        // ─── On load ───
+        window.addEventListener('DOMContentLoaded', function() {
+            try {
+                const accepted = localStorage.getItem('sortpuzzle_privacyPolicyAccepted');
+                // If already accepted, you could auto-redirect, but we leave it to the user.
+            } catch (e) {}
+        });
+    </script>
+
+</body>
+</html>
